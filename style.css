@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 100;
+}
+body {
+  background-color: rgb(164, 164, 164);
+}
+.header {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 15px;
+  align-items: center;
+}
+
+.container {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100vh;
+  padding: 10px 20px;
+  transition: 0.7s;
+  transform: translateX(100%);
+  transition: 0.5s ease;
+}
+.show-nav {
+  transform: translateX(0%);
+}
+
+.accordion-container {
+  border: 1px solid grey;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  position: relative;
+  pointer-events: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.h1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-header {
+  font-size: 2rem;
+  background-color: transparent;
+  flex: 80%;
+  align-items: center;
+  padding-left: 7%;
+  border-right: 1px solid gray;
+  display: flex;
+  
+}
+.accordion-header:hover{
+  transform: scale(1.2);
+}
+.btn {
+  flex: 20%;
+  align-items: center;
+  text-align: center;
+}
+.None {
+  font-size: 1.3rem;
+  padding: 3% 7%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.btn:hover {
+  color: blue;
+  transform: scale(1.2);
+}
+
+.accordion-content {
+  font-size: 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.open .accordion-content {
+  max-height: 1000px;
+}
+.under {
+  padding: 5% 20%;
+  border-bottom: 1px solid gray;
+}
+.under:first-child {
+  border-top: 1px solid gray;
+  width: 100%;
+}
+.under:last-child {
+  border: none;
+}
+
+.rotate1 {
+  rotate: 45deg;
+  transition: 0.5s;
+}
+.rotate2 {
+  rotate: 0deg;
+  transition: 0.5s;
+}
+
+.btn {
+  font-size: 3rem;
+  pointer-events: fill;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 10px;
+  right: 30px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.bar {
+  width: 35px;
+  height: 3px;
+  background-color: black;
+}
+
+.hamburger:hover .bar {
+  transform: rotateZ(-27deg);
+  transition: 0.5s;
+  transform-origin: center;
+  margin-left: auto;
+}
+
+.hamburger:hover .bar:nth-child(1) {
+  width: 22px;
+}
+.hamburger:hover .bar:nth-child(2) {
+  width: 29px;
+}
+.nav-head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10%;
+}
+
+.btnOPENC {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: 0.4s;
+  border: 2px solid rgb(43, 83, 214);
+}
+.btnOPENC:hover {
+  width: 70px;
+  height: 40px;
+  border-radius: 2px;
+}
+.btnOPENC span:nth-child(1) {
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  transition: 0.4s;
+  transform: translateY(10px);
+}
+.btnOPENC span:nth-child(2) {
+  font-size: 14px;
+  transition: 0.4s;
+  transform: translateY(40px);
+  color: rgb(5, 0, 0);
+}
+.btnOPENC:hover span:nth-child(1) {
+  transform: translateY(-30px);
+  transition: 0.4s;
+}
+.btnOPENC:hover span:nth-child(2) {
+  transform: translateY(-5px);
+  transition: 0.4s;
+}
+
+.btn-contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 10% 15%;
+ 
+}
+.btn-comp {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border: 2px solid rgb(6, 145, 205);
+  border-radius: 10px;
+  margin: 2%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-comp::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+  width: 100%;
+  z-index: -1;
+}
+.btn1 {
+  color: rgb(6, 145, 205);
+  background-color: white;
+}
+.btn1::before {
+  width: 100%;
+  height: 0%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: rgb(6, 145, 205);
+}
+.btn1:hover::before {
+  height: 400%;
+}
+.btn1:hover {
+  color: white;
+}
+.btn2 {
+  background-color: rgb(6, 145, 205);
+  color: white;
+}
+.btn2::before {
+  height: 0%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: rgb(255, 250, 250);
+}
+.btn2:hover {
+  color: rgb(6, 145, 205);
+  transition: 0.3s;
+}
+.btn2:hover::before {
+  height: 400%;
+  transition: 0.3s;
+}
